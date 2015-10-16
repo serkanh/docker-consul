@@ -1,0 +1,13 @@
+consul:
+    image: consul:latest
+    command: ./consul agent -server -bootstrap-expect 1 -data-dir /tmp/consul
+    restart: always
+    ports:
+        - 53
+        - 8300
+        - 8301
+        - 8302
+        - 8400
+        - 8500
+    dns:
+       - 127.0.0.1
